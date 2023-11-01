@@ -6,12 +6,21 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import config.DriverChoice;
 import config.DriverFactoryChrome;
+import io.cucumber.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java.After;
+import org.openqa.selenium.WebDriver;
 
-public class Hooks {
+public class Hooks extends DriverFactoryChrome {
+
+    @Before
+    public void setup() {
+        createDriver();
+    }
 
     @After()
     public void tearDown() throws IOException {

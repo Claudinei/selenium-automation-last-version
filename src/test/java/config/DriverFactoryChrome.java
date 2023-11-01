@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactoryChrome {
 
@@ -16,12 +17,14 @@ public class DriverFactoryChrome {
         return driver;
     }
 
-    private static void createDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
+    protected static void createDriver() {
+       // System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
+        driver = WebDriverManager.chromedriver().create();
         final ChromeOptions chromeOptions = new ChromeOptions();
         //driver = new ChromeDriver(chromeOptions.addArguments("--headless"));
         chromeOptions.setHeadless(false);
         driver = new ChromeDriver(chromeOptions);
+
         driver.manage().window().maximize();
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
