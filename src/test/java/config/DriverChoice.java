@@ -1,7 +1,6 @@
 package config;
 
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
 
 public class DriverChoice {
@@ -20,6 +19,8 @@ public class DriverChoice {
                 return DriverFactoryEdge.getDriver();
             case "Geckodriver":
                 return DriverFactoryFirefox.getDriver();
+            case "Safaridriver":
+                return DriverFactorySafari.getDriver();
         }
         return DriverFactoryChrome.getDriver();
     }
@@ -36,6 +37,9 @@ public class DriverChoice {
                 break;
             case "Geckodriver":
                 DriverFactoryFirefox.killDriver();
+                break;
+            case "Safaridriver":
+                DriverFactorySafari.killDriver();
                 break;
         }
     }
