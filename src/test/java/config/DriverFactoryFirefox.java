@@ -1,13 +1,10 @@
 package config;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactoryFirefox {
@@ -22,7 +19,8 @@ public class DriverFactoryFirefox {
     }
 
     private static void createDriver() throws MalformedURLException {
-        System.setProperty("webdriver.gecko.driver", "src/drivers/firefox/geckodriver.exe");
+        //System.setProperty("webdriver.gecko.driver", "src/drivers/firefox/geckodriver.exe");
+        driver = WebDriverManager.firefoxdriver().create();
         final FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setHeadless(false);
         driver = new FirefoxDriver(firefoxOptions);
