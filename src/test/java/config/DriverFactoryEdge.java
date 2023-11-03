@@ -1,8 +1,8 @@
 package config;
 
 import java.util.concurrent.TimeUnit;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class DriverFactoryEdge {
@@ -17,7 +17,8 @@ public class DriverFactoryEdge {
     }
 
     private static void createDriver() {
-        System.setProperty("webdriver.edge.driver", "src/drivers/edge/msedgedriver.exe");
+        //System.setProperty("webdriver.edge.driver", "src/drivers/edge/msedgedriver.exe");
+        driver = WebDriverManager.edgedriver().create();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

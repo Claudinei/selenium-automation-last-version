@@ -19,8 +19,7 @@ public class DriverFactoryChrome {
 
     protected static void createDriver() {
        // System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
-        //driver = WebDriverManager.chromedriver().create();
-        driver = WebDriverManager.edgedriver().create();
+        driver = WebDriverManager.chromedriver().create();
         final ChromeOptions chromeOptions = new ChromeOptions();
         //driver = new ChromeDriver(chromeOptions.addArguments("--headless"));
         chromeOptions.setHeadless(false);
