@@ -20,11 +20,10 @@ public class DriverFactorySafari {
     }
 
     private static void createDriver() {
-        WebDriverManager.getInstance(SafariDriver.class).setup();
         driver = WebDriverManager.safaridriver().create();
-        //driver = new SafariDriver();
         //SafariOptions safariOptions = new SafariOptions();
         //driver = new SafariDriver(safariOptions);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
