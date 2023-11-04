@@ -14,25 +14,29 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>21.0</maven.compiler.source>
+    <maven.compiler.target>21.0</maven.compiler.target>
 
     <!--selenium.version>3.141.59</selenium.version-->
     <selenium.version>4.15.0</selenium.version>
-    <junit.version>4.12</junit.version>
-
     <chrome-driver.version>4.15.0</chrome-driver.version>
     <edge-driver.version>4.15.0</edge-driver.version>
     <firefox-driver.version>4.15.0</firefox-driver.version>
     <testng.version>7.8.0</testng.version>
     <commons.version>2.15.0</commons.version>
     <allure.version>2.24.0</allure.version>
+    <cucumber.java.version>4.8.0</cucumber.java.version>
+    <cucumber.junit.version>4.8.0</cucumber.junit.version>
+    <junit.jupiter.version>5.10.0</junit.jupiter.version>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-surfire-plugin>2.22.2</maven-surfire-plugin>
     <aspectj.version>1.9.5</aspectj.version>
     <assertj-core.version>3.16.1</assertj-core.version>
-    <cucumber.version>4.8.0</cucumber.version>
+
+
+
+
     <slf4j.api.version>1.7.5</slf4j.api.version>
     <slf4j.log4j12.verion>1.7.5</slf4j.log4j12.verion>
 
@@ -90,26 +94,29 @@
         <version>${allure.version}</version>
       </dependency>
 
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-        <scope>compile</scope>
-      </dependency>
 
       <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-java</artifactId>
-        <version>${cucumber.version}</version>
+        <version>${cucumber.java.version}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-junit</artifactId>
-        <version>${cucumber.version}</version>
+        <version>${cucumber.junit.version}</version>
         <scope>test</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>${junit.jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+
 
       <dependency>
         <groupId>org.assertj</groupId>
@@ -129,12 +136,6 @@
         <version>${slf4j.log4j12.verion}</version>
       </dependency>
 
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>RELEASE</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
 
   <build>
