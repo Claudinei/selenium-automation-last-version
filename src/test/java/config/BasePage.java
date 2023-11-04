@@ -1,10 +1,13 @@
 package config;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class BasePage {
 
@@ -33,7 +36,8 @@ public class BasePage {
     }
 
     public void aguardarElemento(By by, int tempo ) throws IOException {
-        WebDriverWait wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), tempo);
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        //WebDriverWait wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), tempo);
+        //Wait<WebDriver> wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), Duration.ofSeconds(tempo));
+        //wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 }
