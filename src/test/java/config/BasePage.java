@@ -37,7 +37,7 @@ public class BasePage {
 
     public void aguardarElemento(By by, int tempo ) throws IOException {
         //WebDriverWait wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), tempo);
-        //Wait<WebDriver> wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), Duration.ofSeconds(tempo));
-        //wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        Wait<WebDriver> wait = new WebDriverWait(DriverChoice.escolhaDoDriver(), Duration.ofSeconds(tempo));
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 }
