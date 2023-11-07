@@ -1,5 +1,6 @@
 package config;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +20,7 @@ public class DriverFactoryChrome {
 
     protected static void createDriver() {
         // System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
-         driver = WebDriverManager.chromedriver().create();
+        driver = WebDriverManager.chromedriver().create();
 
         //ChromeOptions options = new ChromeOptions();
         //driver = new ChromeDriver(options.addArguments("--headless"));
@@ -27,8 +28,8 @@ public class DriverFactoryChrome {
         //driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     public static void killDriver() {
