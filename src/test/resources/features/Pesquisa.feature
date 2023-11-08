@@ -1,11 +1,12 @@
 #language: pt
 
-@google
+
 Funcionalidade: Pesquisa
 
   Contexto:
     Dado que estou na home do google
 
+  @google
   Cenário: Pesquisar no google Selenium
     Quando preencho o texto "Selenium" para pesquisa
     E clico no botao pesquisar
