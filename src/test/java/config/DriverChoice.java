@@ -6,7 +6,7 @@ import java.io.IOException;
 public class DriverChoice {
 
     public static String recuperaopcaoDriver() throws IOException {
-        return Manipulador.getProp().getProperty("prop.server.navegador");
+        return Manipulador.getProp("src/main/resources/config/config.properties").getProperty("prop.server.navegador");
     }
 
     public static WebDriver escolhaDoDriver() throws IOException {

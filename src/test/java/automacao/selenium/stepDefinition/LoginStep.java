@@ -1,6 +1,7 @@
 package automacao.selenium.stepDefinition;
 
 import automacao.selenium.page.LoginPage;
+import config.Manipulador;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
@@ -16,7 +17,7 @@ public class LoginStep {
 
     @Dado("que estou na home do google")
     public void que_estou_na_home_do_google() throws IOException {
-        page.acessarPage("https://www.google.com");
+        page.acessarPage(Manipulador.getProp("src/main/resources/config/ambiente.properties").getProperty("url.base"));
     }
 
     @Quando("preencho o texto {string} para pesquisa")
