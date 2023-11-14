@@ -25,7 +25,7 @@ public class Hooks {
 
         File imagem = ((TakesScreenshot) DriverChoice.escolhaDoDriver()).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(imagem, new File("src/main/resources/evidencias/"+dataHora+".png"));
+            FileUtils.copyFile(imagem, new File("allure-results/screenshots/"+dataHora+".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
