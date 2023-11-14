@@ -13,4 +13,4 @@ import org.junit.runner.RunWith;
         glue= {"automacao/selenium/stepDefinition"},
         tags = "@google")
 
-public class RunnerTest {}
+public class TestRunner {}
