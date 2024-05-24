@@ -33,14 +33,14 @@
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-surfire-plugin>2.22.2</maven-surfire-plugin>
     <aspectj.version>1.9.5</aspectj.version>
+    <webdrivermanager.version>5.8.0</webdrivermanager.version>
   </properties>
 
     <dependencies>
-
       <dependency>
         <groupId>io.github.bonigarcia</groupId>
         <artifactId>webdrivermanager</artifactId>
-        <version>5.8.0</version>
+        <version>${webdrivermanager.version}</version>
       </dependency>
 
       <dependency>
