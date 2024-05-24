@@ -19,13 +19,16 @@ public class DriverFactoryChrome {
     }
 
     protected static void createDriver() {
-        // System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src/drivers/chrome/chromedriver");
+
         driver = WebDriverManager.chromedriver().create();
 
-        //ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         //driver = new ChromeDriver(options.addArguments("--headless"));
         //options.setHeadless(true);
-        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
+
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
